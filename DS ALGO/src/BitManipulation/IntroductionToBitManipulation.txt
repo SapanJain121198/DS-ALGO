@@ -1,0 +1,72 @@
+-- Machine store in the form of binary - 0 & 1
+
+-- datatypes to store numbers -
+
+	1. byte -- 8 bits --- can store 2^8 distinct no.s
+	2. short -- 16 bit --- 2^16
+	3. int -- 32 bits --- 2^32
+	4. long -- 64 bits --- 2^64
+
+Binary to decimal
+=====================
+-- approach used in m/c to convert from binary to decimal	
+	-- 0 msb -- simple convert to decimal
+	-- 1 msb -- 2's complement --> convert to decimal--> negative sign
+	
+-- range of a datatype = -(2^(n-1)) to (2^(n-1))-1 for eg. for 8 bit its from  
+   -128 to 127 
+   
+   
+Decimal to binary
+====================
+---	+ve no. -------> convert to binary ----> Fit in bits (append 0's if smaller than no. of bits in that datatype / truncate bits if out of range)
+
+--- -ve no. --------> leave -ve sign ---> Fit in bits----> 2's complement
+
+BitWise operator
+=====================================
+
+| ------ OR ---------------- a | 1 = 1 ----- a | 0 = a ---(1 is powerful)--- switch bits on
+
+& ------ AND ---------------- a & 0 = 0 ----- a & 1 = a ---(0 is powerful)---
+switch bits off
+
+^ ------ XOR -------------- a ^ 1 = ~ a ----- a ^ 0 = a --- (1 is powerful)--
+used to toggle
+
+<< ----- LEFT SHIFT ---- bring specified no. of 0's in left side
+>> ----- RIGHT SHIFT ---- bring specified no. of MSB in right side
+>>> ---- TRIPLE RIGHT SHIFT --- bring specifed no. of 0's in right side
+~ ------ 1'S COMPLEMENT --- toggle all bits 
+-x ----- 2'S COMPLEMENT
+
+=======================================
+
+
+on -- or --- we OR the given no. by mask in which that particular bit is 1 and others are 0 -------mask will be create by left shift by the no. of times equal to that bit's position
+
+
+off -- and -- we AND by 0 by mask in which that particular bit is 0 and others are 1 ---- mask will be created by left shift by number of times equal to that bit's position and then taking 1's complement
+
+
+toggle -- xor--- we XOR the given no. by mask in which that particular bit is 1 and others are 0 -------mask will be create by left shift by the no. of times equal to that bit's position
+
+check -- and --- we AND the given no. by mask in which that particular bit is 1 and others are 0 -------mask will be create by left shift by the no. of times equal to that bit's position
+
+=========================
+
+-- since bitwise operator have precedence less that = , hence always use brackets
+
+int onMask = (1 << i);  // to on ith bit
+int offMask = (~(1 << j)) // to off jth bit
+int toggleMask = (1 << k);  // to toggle kth bit
+int checkMask = (1 << m); // to check mth bit
+
+System.out.println( n | onMask);
+System.out.println( n & offMask);
+System.out.println( n ^ toggleMask);
+System.out.println( (n & checkMask) == 0 ? false : true);
+
+
+
+
