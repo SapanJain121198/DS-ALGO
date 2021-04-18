@@ -1,0 +1,14 @@
+int[] marks;  // declaration
+
+marks = new int[5]; // int[] marks = new int[5];
+
+marks[0] = 51;
+marks[1] = 33;
+marks[2] = 44;
+marks[3] = 67;
+marks[4] = 98; 
+
+for(int i = 0; i < marks.length ; i++){
+System.out.println(marks[i]);
+}
+

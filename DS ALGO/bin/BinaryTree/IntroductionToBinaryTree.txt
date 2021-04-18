@@ -1,0 +1,20 @@
+-- In generic tree there can be any number of children of a node
+
+-- Binary tree can have atmost 2 children
+
+Node of a BT
+========================
+
+public static class Node{
+	int data;
+	Node left;
+	Node right;
+	
+	Node(int data, Node left, Node right){
+		this.data = data;
+		this.left = left;
+		this.right = right;
+	}
+}
+
+=========================
